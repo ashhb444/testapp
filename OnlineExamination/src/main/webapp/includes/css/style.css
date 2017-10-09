@@ -1,0 +1,10 @@
+#loginbox{
+	margin-top:15%;
+}
+
+#forgotpassword{
+	float:right; 
+	font-size: 80%; 
+	position: relative; 
+	top:-10px
+}

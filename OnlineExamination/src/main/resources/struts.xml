@@ -1,0 +1,213 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+<constant name="struts.custom.i18n.resources" value="../platform.label.GlobalLabel" />
+<constant name="struts.ui.theme" value="bootstrap" />	
+	<package name="examination" namespace="/examination" extends="struts-default, json-default">
+	
+		<result-types><result-type name="tiles"
+ 			class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>	
+		
+		<action name="register" class="register" method="register">
+			<result name="success">/view/register.jsp</result>  
+			<result name="error">/view/register.jsp</result>  
+	   	</action>
+	   	
+	   	<action name="login" class="login" method="login">
+			<result name="adminsuccess" type="tiles">admin-default</result>
+			<result name="examineesuccess" type="tiles">examinee-default</result>
+			<result name="error">/index.jsp</result>  
+	   	</action>
+		
+		<action name="getDashboard" class="getDashboard" method="dashboard">
+			<result name="admin" type="tiles">admin-default</result>  
+	   	</action>
+		
+		<action name="getTopicsAction" class="getTopicsAction" method="loadTopics">
+			<result name="success" type="tiles">load-topic</result>  
+		</action>
+		
+		<action name="addTopicAction" class="addTopicAction" method="addTopic">
+			<result name="success" type="tiles">add-topic</result>  
+		</action>
+		
+		<action name="saveTopicAction" class="saveTopicAction" method="saveTopic">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="deleteTopicAction" class="deleteTopicAction" method="deleteTopic">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="editTopicAction" class="editTopicAction" method="editTopic">
+			<result name="success" type="tiles">add-topic</result>  
+		</action>
+		
+		<action name="getSubTopicsAction" class="getSubTopicsAction" method="loadSubTopics">
+			<result name="success" type="tiles">load-subtopic</result>  
+		</action>
+		
+		<action name="addSubTopicAction" class="addSubTopicAction" method="addSubTopic">
+			<result name="success" type="tiles">add-subtopic</result>  
+		</action>
+		
+		<action name="saveSubTopicAction" class="saveSubTopicAction" method="saveSubTopic">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="editSubTopicAction" class="editSubTopicAction" method="editSubTopic">
+			<result name="success" type="tiles">add-subtopic</result>  
+		</action>
+		
+		<action name="deleteSubTopicAction" class="deleteSubTopicAction" method="deleteSubTopic">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="getSubTopicByTopicAction" class="getSubTopicByTopicAction" method="loadSubTopicsByTopic">
+			<result name="success" type="json">
+				<param name="root">jsonList</param>
+			</result>
+		</action>
+		
+		<action name="getQuestionCountBySubTopicAction" class="getQuestionCountBySubTopicAction" method="loadQuestionCountBySubTopic">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+		</action>
+		
+		<action name="getQuestionsAction" class="getQuestionsAction" method="loadQuestions">
+			<result name="success" type="tiles">load-question</result>  
+		</action>
+		
+		<action name="addQuestionAction" class="addQuestionAction" method="addQuestion">
+			<result name="success" type="tiles">add-question</result>  
+		</action>
+		
+		<action name="saveQuestionAction" class="saveQuestionAction" method="saveQuestion">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="viewQuestionAction" class="viewQuestionAction" method="viewQuestions">
+			<result name="success" type="tiles">view-question</result>  
+		</action>
+		
+		<action name="editQuestionAction" class="editQuestionAction" method="editQuestion">
+			<result name="success" type="tiles">add-question</result>  
+		</action>
+		
+		<action name="deleteQuestionAction" class="deleteQuestionAction" method="deleteQuestion">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="getUsersAction" class="getUsersAction" method="loadUsers">
+			<result name="success" type="tiles">load-user</result>  
+		</action>
+		
+		<action name="addUserAction" class="addUserAction" method="addUser">
+			<result name="success" type="tiles">add-user</result>  
+		</action>
+		
+		<action name="saveUserAction" class="saveUserAction" method="saveUser">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="editUserAction" class="editUserAction" method="editUser">
+			<result name="success" type="tiles">add-user</result>  
+		</action>
+		
+		<action name="deleteUserAction" class="deleteUserAction" method="deleteUser">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="getExamsAction" class="getExamsAction" method="loadExams">
+			<result name="success" type="tiles">load-exams</result>  
+		</action>
+		
+		<action name="addExamAction" class="addExamAction" method="addExam">
+			<result name="success" type="tiles">add-exam</result>  
+		</action>
+		
+		<action name="saveExamAction" class="saveExamAction" method="saveExam">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="editExamAction" class="editExamAction" method="editExam">
+			<result name="success" type="tiles">add-exam</result>  
+		</action>
+		
+		<action name="loadExamAction" class="loadExamAction" method="loadExam">
+			<result name="success" type="tiles">load-exam</result>  
+		</action>
+		
+		<action name="saveExamResult" class="saveExamResult" method="saveExamResult">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+            	<param name="contentType">application/json</param>
+        	</interceptor-ref>
+        	<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+		<action name="deleteExamAction" class="deleteExamAction" method="deleteExam">
+			<result name="success" type="json">
+				<param name="root">jsonObject</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">jsonObject</param>
+			</result>   
+		</action>
+		
+	</package>
+</struts>

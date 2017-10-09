@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+	   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<!-- Search App Tile Definition Starts -->
+	
+	<!-- PARENT(BASE) TILE DEFINITION(S) STARTS -->	
+
+	<definition name="admin-default" template="/view/baselayout.jsp">
+		<put-attribute name="title"  value="Dashboard"/>
+	    <put-attribute name="header" value="/view/header.jsp"/>
+	    <put-attribute name="menu"   value="/view/admin/menu.jsp"/>
+	    <put-attribute name="content" value="/view/admin/dashboard.jsp"/>
+	    <put-attribute name="body"   value="/view/login.jsp"/>
+	    <put-attribute name="footer" value="/view/footer.jsp"/>
+	</definition>
+		
+	<definition name="load-topic" extends="admin-default">
+		<put-attribute name="title"  value="Topics"/>
+      	<put-attribute name="content" value="/view/admin/topics.jsp"/>      
+   	</definition>
+   
+	<definition name="add-topic" extends="admin-default">
+		<put-attribute name="title"  value="Add Topic"/>
+      	<put-attribute name="content" value="/view/admin/addtopic.jsp"/>      
+  	</definition>
+   
+   <definition name="load-subtopic" extends="admin-default">
+   		<put-attribute name="title"  value="Subtopics"/>
+      	<put-attribute name="content" value="/view/admin/subtopics.jsp"/>      
+   </definition>
+   
+   <definition name="add-subtopic" extends="admin-default">
+   		<put-attribute name="title"  value="Add Sub Topic"/>
+      	<put-attribute name="content" value="/view/admin/addsubtopic.jsp"/>      
+   </definition>
+   
+   <definition name="load-subject" extends="admin-default">
+   		<put-attribute name="title"  value="Subjects"/>
+      	<put-attribute name="content" value="/view/admin/subjects.jsp"/>      
+   </definition>
+   
+	<definition name="add-subject" extends="admin-default">
+		<put-attribute name="title"  value="Add Subject"/>
+      	<put-attribute name="content" value="/view/admin/addsubject.jsp"/>      
+   </definition>
+   
+   <definition name="load-subject-by-question" extends="admin-default">
+      <put-attribute name="content" value="/view/admin/subjectsbyquestion.jsp"/>      
+   </definition>
+   
+	<definition name="add-question" extends="admin-default">
+		<put-attribute name="title"  value="Add Question"/>
+      	<put-attribute name="content" value="/view/admin/addquestion.jsp"/>      
+   </definition>
+   
+   <definition name="load-question" extends="admin-default">
+   		<put-attribute name="title"  value="Questions"/>
+      	<put-attribute name="content" value="/view/admin/questions.jsp"/>      
+   </definition>
+   
+   <definition name="load-user" extends="admin-default">
+   		<put-attribute name="title"  value="Users"/>
+      	<put-attribute name="content" value="/view/admin/users.jsp"/>      
+   </definition>
+   
+   <definition name="add-user" extends="admin-default">
+   		<put-attribute name="title"  value="Add User"/>
+      	<put-attribute name="content" value="/view/admin/adduser.jsp"/>      
+  	</definition>
+  	
+  	<definition name="load-exams" extends="admin-default">
+  		<put-attribute name="title"  value="Exams"/>
+    	<put-attribute name="content" value="/view/admin/exams.jsp"/>      
+   	</definition>
+   
+   <definition name="add-exam" extends="admin-default">
+   		<put-attribute name="title"  value="Add Exam"/>
+      	<put-attribute name="content" value="/view/admin/addexam.jsp"/>      
+  	</definition>
+  	
+  	<definition name="load-exam" extends="admin-default">
+  		<put-attribute name="title"  value="Exam"/>
+    	<put-attribute name="content" value="/view/loadexam.jsp"/>      
+   	</definition>
+   	
+   	<definition name="examinee-default" template="/view/baselayout.jsp">
+		<put-attribute name="title"  value="Dashboard"/>
+	    <put-attribute name="header" value="/view/header.jsp"/>
+	    <put-attribute name="menu"   value="/view/examinee/menu.jsp"/>
+	    <put-attribute name="content" value="/view/examinee/dashboard.jsp"/>
+	    <put-attribute name="body"   value="/view/login.jsp"/>
+	    <put-attribute name="footer" value="/view/footer.jsp"/>
+	</definition>
+	
+</tiles-definitions>

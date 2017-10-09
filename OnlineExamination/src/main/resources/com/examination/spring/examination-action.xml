@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Bean defintion of dataSourceDAO -->
+
+	<bean id="login" 
+		class="com.examination.action.UserLoginAction" scope="prototype">
+		<property name="userService"
+			ref ="userService"/>
+	</bean>
+	<bean id="getDashboard" 
+		class="com.examination.action.UserAction" scope="prototype">
+	</bean>
+	
+	<bean id="getUsersAction" 
+		class="com.examination.action.UserAction" scope="prototype">
+		<property name="userService"
+			ref ="userService"/>
+	</bean>
+	
+	<bean id="addUserAction" 
+		class="com.examination.action.UserAction" scope="prototype">
+		<property name="userService"
+			ref ="userService"/>
+		<property name="userGroupService"
+			ref ="userGroupService"/>
+	</bean>
+	
+	<bean id="saveUserAction" 
+		class="com.examination.action.UserAction" scope="prototype">
+		<property name="userService"
+			ref ="userService"/>
+		<property name="userGroupService"
+			ref ="userGroupService"/>
+	</bean>	
+	
+	<bean id="editUserAction" 
+		class="com.examination.action.UserAction" scope="prototype">
+		<property name="userService"
+			ref ="userService"/>
+		<property name="userGroupService"
+			ref ="userGroupService"/>
+	</bean>
+	
+	<bean id="deleteUserAction" 
+		class="com.examination.action.UserAction" scope="prototype">
+		<property name="userService"
+			ref ="userService"/>
+	</bean>
+</beans>

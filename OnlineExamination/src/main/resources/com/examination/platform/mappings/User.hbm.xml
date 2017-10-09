@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.examination.core.common.bean.User" table="USER">
+		<id name="id" column="ID">
+			<generator class="increment"/>
+		</id>
+		<property name="firstName" column="firstname"/>
+		<property name="lastName" column="lastname"/>
+		<property name="email" column="email"/>
+		<property name="password" column="password"/>
+		<property name="mobileNumber" column="mobilenumber"/>
+		<property name="dob" column="dob"/>
+		<property name="imagePath" column="imagepath"/>
+		<property name="examField" column="examfield"/>
+		<property name="userType" column="usertype">
+			<type name="org.hibernate.type.EnumType">
+        		<param name="enumClass">com.examination.core.common.type.UserType</param>
+        		<param name="useNamed">true</param>
+    		</type>
+		</property>
+		<property name="status" column="status">
+			<type name="org.hibernate.type.EnumType">
+        		<param name="enumClass">com.examination.core.common.type.StatusType</param>
+        		<param name="useNamed">true</param>
+    		</type>
+		</property>
+	</class>
+	
+	<query name="QUERY_GET_USER_BY_EMAIL_AND_PASSWORD">
+		<![CDATA[from User as user where user.email=:email and user.password=:password]]>
+	</query>
+	<query name="QUERY_GET_USER_BY_EMAIL">
+			<![CDATA[from User as user where user.email=:email]]>
+	</query>
+	
+</hibernate-mapping>
